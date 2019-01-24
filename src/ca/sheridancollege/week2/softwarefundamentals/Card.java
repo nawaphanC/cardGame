@@ -13,9 +13,9 @@ public class Card {
     private String suit;
     private int value;
 
-    public Card (String s, int v){
-        suit = s;
-        value = v;
+    public Card(String suit, int value){
+        setSuit(suit);
+        setValue(value);
     }
     
     /**
@@ -29,7 +29,12 @@ public class Card {
      * @param suit the suit to set
      */
     public void setSuit(String suit) {
-        this.suit = suit;
+        if(suit.equalsIgnoreCase("heart") || suit.equalsIgnoreCase("diamond") ||
+            suit.equalsIgnoreCase("club") || suit.equalsIgnoreCase("spade")){
+            this.suit = suit;
+        } else {
+            System.out.println("Invalid suit");
+        }      
     }
 
     /**
@@ -43,8 +48,10 @@ public class Card {
      * @param value the value to set
      */
     public void setValue(int value) {
-        this.value = value;
-    }
-    
-    
+        if(value >= 1 && value <= 30){
+            this.value = value;
+        } else {
+            System.out.println("Invalid value");
+        }
+    } 
 }
