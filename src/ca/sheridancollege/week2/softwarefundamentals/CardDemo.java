@@ -12,6 +12,8 @@ package ca.sheridancollege.week2.softwarefundamentals;
 public class CardDemo {
     public static void main (String args[]){
         Card c1 = new Card("Hiojoi", 150);
+        Card c2 = new Card("Heart", 10);
         System.out.println(c1.getValue() + " of " + c1.getSuit());
+        System.out.println(c2.getValue() + " of " + c2.getSuit());
     }
 }
